@@ -121,6 +121,7 @@ def chat():
 
 
 if __name__ == "__main__":
+    is_debug = os.environ.get("FLASK_DEBUG", "false").lower() == "true"
     print(f"🐍 Chat Service đang chạy tại http://localhost:{PORT}")
     print(f"🤖 Engine: mock (placeholder cho AI/LLM)")
-    app.run(host="0.0.0.0", port=PORT, debug=True)
+    app.run(host="0.0.0.0", port=PORT, debug=is_debug)
